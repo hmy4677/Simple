@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Web", "Web\Simple.We
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Services.User", "Services\ExServices\Simple.Services.User\Simple.Services.User.csproj", "{5AE90187-6052-47DC-BB35-B6FBAAAF8B02}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Security", "Application\Security\Security.csproj", "{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{5AE90187-6052-47DC-BB35-B6FBAAAF8B02}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5AE90187-6052-47DC-BB35-B6FBAAAF8B02}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5AE90187-6052-47DC-BB35-B6FBAAAF8B02}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,5 +67,6 @@ Global
 		{151BB68B-5037-4E13-8C03-F55BB1BA809B} = {5FCADD85-E68E-435E-9162-BE8DB7833A23}
 		{2FBDFC67-DDC1-4181-ABB2-F6B17CABC636} = {0FD14587-90DA-4FF6-A988-6B1903BD6C8B}
 		{5AE90187-6052-47DC-BB35-B6FBAAAF8B02} = {880E9B6B-FEAB-4184-BD9B-EABEE01FBB54}
+		{060FBB2B-73FB-4B0D-94E3-D919BF1A1BC5} = {8326B2F3-74A2-4370-9CD5-9FE22781CA1A}
 	EndGlobalSection
 EndGlobal
