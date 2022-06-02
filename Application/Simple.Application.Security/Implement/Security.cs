@@ -4,10 +4,11 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using Simple.Application.Security.Enum;
 using Simple.Application.Security.Interface;
+using Furion.DependencyInjection;
 
 namespace Simple.Application.Security.Implement
 {
-  public class Security : ISecurity
+  public class Security : ISecurity, ITransient
   {
 
     /// <summary>

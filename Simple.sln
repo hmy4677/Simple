@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Services.User", "Ser
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Application.Security", "Application\Simple.Application.Security\Simple.Application.Security.csproj", "{415B6765-A491-4F20-A178-B2C5D9047480}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Application.QrCode", "Application\Simple.Application.QrCode\Simple.Application.QrCode.csproj", "{F1FDC47C-722F-4484-9001-9F4E96E17796}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -53,6 +55,10 @@ Global
 		{415B6765-A491-4F20-A178-B2C5D9047480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{415B6765-A491-4F20-A178-B2C5D9047480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{415B6765-A491-4F20-A178-B2C5D9047480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1FDC47C-722F-4484-9001-9F4E96E17796}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1FDC47C-722F-4484-9001-9F4E96E17796}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1FDC47C-722F-4484-9001-9F4E96E17796}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1FDC47C-722F-4484-9001-9F4E96E17796}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,5 +74,6 @@ Global
 		{2FBDFC67-DDC1-4181-ABB2-F6B17CABC636} = {0FD14587-90DA-4FF6-A988-6B1903BD6C8B}
 		{5AE90187-6052-47DC-BB35-B6FBAAAF8B02} = {880E9B6B-FEAB-4184-BD9B-EABEE01FBB54}
 		{415B6765-A491-4F20-A178-B2C5D9047480} = {8326B2F3-74A2-4370-9CD5-9FE22781CA1A}
+		{F1FDC47C-722F-4484-9001-9F4E96E17796} = {8326B2F3-74A2-4370-9CD5-9FE22781CA1A}
 	EndGlobalSection
 EndGlobal

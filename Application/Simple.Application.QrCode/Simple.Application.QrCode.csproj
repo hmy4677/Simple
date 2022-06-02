@@ -9,13 +9,11 @@
   <ItemGroup>
     <None Remove="Implement\" />
     <None Remove="Interface\" />
-    <None Remove="Model\" />
     <None Remove="Enum\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Implement\" />
     <Folder Include="Interface\" />
-    <Folder Include="Model\" />
     <Folder Include="Enum\" />
   </ItemGroup>
   <ItemGroup>
