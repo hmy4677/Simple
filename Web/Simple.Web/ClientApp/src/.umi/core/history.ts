@@ -1,5 +1,5 @@
 // @ts-nocheck
-import { createBrowserHistory, History } from '/Users/hemingyu/项目/Simple/Simple/ClientApp/node_modules/umi/node_modules/@umijs/runtime';
+import { createBrowserHistory, History } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/umi/node_modules/@umijs/runtime';
 
 let options = {
   "basename": "/"

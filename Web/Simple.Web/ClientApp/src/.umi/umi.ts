@@ -4,8 +4,8 @@ import '@@/core/devScripts';
 import { plugin } from './core/plugin';
 import './core/pluginRegister';
 import { createHistory } from './core/history';
-import { ApplyPluginsType } from '/Users/hemingyu/项目/Simple/Simple/ClientApp/node_modules/umi/node_modules/@umijs/runtime';
-import { renderClient } from '/Users/hemingyu/项目/Simple/Simple/ClientApp/node_modules/@umijs/renderer-react/dist/index.js';
+import { ApplyPluginsType } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/umi/node_modules/@umijs/runtime';
+import { renderClient } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
 
