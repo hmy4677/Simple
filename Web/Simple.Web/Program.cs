@@ -1,4 +1,7 @@
+using Furion.UnifyResult;
+using Simple.Core.Sugar;
 using Simple.Web;
+using Yitter.IdGenerator;
 
 var builder = WebApplication.CreateBuilder(args).Inject();
 
