@@ -26,7 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Services\ExServices\Simple.Services.User\Simple.Services.User.csproj">
+    <ProjectReference Include="..\..\Services\Extension\Simple.Services.System\Simple.Services.System.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
   </ItemGroup>
