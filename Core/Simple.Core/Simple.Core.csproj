@@ -15,10 +15,12 @@
     <PackageReference Include="Yitter.IdGenerator" Version="1.0.12" />
     <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.0" />
     <PackageReference Include="SkiaSharp.QrCode" Version="0.6.0" />
+    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.5" />
   </ItemGroup>
 
   <ItemGroup>
     <None Remove="SkiaSharp.NativeAssets.Linux.NoDependencies" />
     <None Remove="SkiaSharp.QrCode" />
+    <None Remove="Microsoft.Extensions.Caching.StackExchangeRedis" />
   </ItemGroup>
 </Project>
