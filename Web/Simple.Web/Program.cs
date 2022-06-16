@@ -1,5 +1,6 @@
 using Furion;
 using Furion.UnifyResult;
+using Simple.Core.Redis;
 using Simple.Core.Sugar;
 using Simple.Web;
 using Yitter.IdGenerator;
@@ -11,11 +12,7 @@ builder.Services.AddJwt<JwtHandler>(enableGlobalAuthorize: true);//JWT
 builder.Services.AddControllersWithViews().AddInjectWithUnifyResult<RESTfulResultProvider>();//统一REST
 builder.Services.AddRemoteRequest();//远程请求
 builder.Services.AddDBConnection();//连数据库
-builder.Services.AddStackExchangeRedisCache(options =>//连redis
-{
-  options.Configuration = App.Configuration.GetConnectionString("Redis");
-  options.InstanceName = "simple_";
-});
+builder.Services.AddRedisConnection();//连Redis
 
 var app = builder.Build();
 

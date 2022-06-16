@@ -12,10 +12,10 @@
     <PackageReference Include="Furion.Pure" Version="3.5.0" />
     <PackageReference Include="SqlSugar.IOC" Version="1.8.0" />
     <PackageReference Include="SqlSugarCore" Version="5.0.8.7" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.45" />
     <PackageReference Include="Yitter.IdGenerator" Version="1.0.12" />
     <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.0" />
     <PackageReference Include="SkiaSharp.QrCode" Version="0.6.0" />
-    <PackageReference Include="Microsoft.Extensions.Caching.StackExchangeRedis" Version="6.0.5" />
   </ItemGroup>
 
   <ItemGroup>
