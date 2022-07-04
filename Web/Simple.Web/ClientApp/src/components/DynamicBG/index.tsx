@@ -31,7 +31,7 @@ const options: IOptions = {
         repeat: "no-repeat",
         size: "cover"
     },
-    fpsLimit: 120,
+    fpsLimit: 60,
     fullScreen: {
         zIndex: 1
     },
@@ -134,7 +134,7 @@ const options: IOptions = {
                 right: OutMode.out,
                 top: OutMode.out,
             },
-            speed: 6,
+            speed: 3,
             warp: true
         },
         number: {

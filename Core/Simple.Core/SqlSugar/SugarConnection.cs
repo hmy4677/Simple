@@ -17,7 +17,7 @@ namespace Simple.Core.Sugar
                 new IocConfig
                 {
                     ConfigId="db1",//id自定义唯一
-                    ConnectionString=App.Configuration.GetConnectionString("TrackDB"),//appsettion 连接字符串
+                    ConnectionString=App.Configuration.GetConnectionString("SimpleDB"),//appsettion 连接字符串
                     DbType=IocDbType.SqlServer,         
                     IsAutoCloseConnection=true
                 },

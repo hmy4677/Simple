@@ -21,7 +21,7 @@ namespace Simple.Services.DbInitial.Implement
     /// </summary>
     public void CreateDbAndTable()
     {
-      _db.DbMaintenance.CreateDatabase("dbName");
+      _db.DbMaintenance.CreateDatabase("SimpleDB");
       //_db.CodeFirst.SetStringDefaultLength(50).InitTables<UserEntity>();//单个建表
 
       var types = typeof(UserEntity).Assembly.GetTypes()//任意实体类中的类

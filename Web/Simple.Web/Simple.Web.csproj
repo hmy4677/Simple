@@ -26,6 +26,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Remove="Controllers\Base\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controllers\Base\" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\..\Services\Extension\Simple.Services.System\Simple.Services.System.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
     </ProjectReference>
