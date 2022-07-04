@@ -1,6 +1,6 @@
 // @ts-nocheck
 import React from 'react';
-import { ApplyPluginsType } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/umi/node_modules/@umijs/runtime';
+import { ApplyPluginsType } from 'C:/Users/Administrator/Documents/Projects/Simple/Web/Simple.Web/ClientApp/node_modules/@umijs/runtime';
 import * as umiExports from './umiExports';
 import { plugin } from './plugin';
 

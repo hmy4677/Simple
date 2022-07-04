@@ -17,19 +17,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Base", "Base", "{F7A642A1-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Extension", "Extension", "{880E9B6B-FEAB-4184-BD9B-EABEE01FBB54}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Data", "Data\Simple.Data\Simple.Data.csproj", "{0C0167D0-00C0-425A-80D0-952BAA78746C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Data", "Data\Simple.Data\Simple.Data.csproj", "{0C0167D0-00C0-425A-80D0-952BAA78746C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Core", "Core\Simple.Core\Simple.Core.csproj", "{151BB68B-5037-4E13-8C03-F55BB1BA809B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Core", "Core\Simple.Core\Simple.Core.csproj", "{151BB68B-5037-4E13-8C03-F55BB1BA809B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Web", "Web\Simple.Web\Simple.Web.csproj", "{2FBDFC67-DDC1-4181-ABB2-F6B17CABC636}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Web", "Web\Simple.Web\Simple.Web.csproj", "{2FBDFC67-DDC1-4181-ABB2-F6B17CABC636}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Application.Security", "Application\Simple.Application.Security\Simple.Application.Security.csproj", "{415B6765-A491-4F20-A178-B2C5D9047480}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Application.Security", "Application\Simple.Application.Security\Simple.Application.Security.csproj", "{415B6765-A491-4F20-A178-B2C5D9047480}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Application.QrCode", "Application\Simple.Application.QrCode\Simple.Application.QrCode.csproj", "{F1FDC47C-722F-4484-9001-9F4E96E17796}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Application.QrCode", "Application\Simple.Application.QrCode\Simple.Application.QrCode.csproj", "{F1FDC47C-722F-4484-9001-9F4E96E17796}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Services.System", "Services\Extension\Simple.Services.System\Simple.Services.System.csproj", "{FB0615A4-792A-4A43-807E-927E085C0772}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Services.System", "Services\Extension\Simple.Services.System\Simple.Services.System.csproj", "{FB0615A4-792A-4A43-807E-927E085C0772}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Services.DbInitial", "Services\Base\Simple.Services.DbInitial\Simple.Services.DbInitial.csproj", "{A573F1D6-75E6-4B24-9EAB-C3AE22445B45}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Simple.Services.DbInitial", "Services\Base\Simple.Services.DbInitial\Simple.Services.DbInitial.csproj", "{A573F1D6-75E6-4B24-9EAB-C3AE22445B45}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Simple.Application.ComputerInfo", "Application\Simple.Application.ComputerInfo\Simple.Application.ComputerInfo.csproj", "{D3FD95E3-5E2B-440E-9F31-6987DE9BD593}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -65,12 +67,13 @@ Global
 		{A573F1D6-75E6-4B24-9EAB-C3AE22445B45}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A573F1D6-75E6-4B24-9EAB-C3AE22445B45}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A573F1D6-75E6-4B24-9EAB-C3AE22445B45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D3FD95E3-5E2B-440E-9F31-6987DE9BD593}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D3FD95E3-5E2B-440E-9F31-6987DE9BD593}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D3FD95E3-5E2B-440E-9F31-6987DE9BD593}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D3FD95E3-5E2B-440E-9F31-6987DE9BD593}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
-	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {D0B45463-9381-49AD-BFB3-C842BDF339DF}
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{F7A642A1-5E62-4BF4-897D-B06ED9687780} = {2C4469B6-BA5B-4F3D-94A2-247E0DAD5F90}
@@ -82,5 +85,9 @@ Global
 		{F1FDC47C-722F-4484-9001-9F4E96E17796} = {8326B2F3-74A2-4370-9CD5-9FE22781CA1A}
 		{FB0615A4-792A-4A43-807E-927E085C0772} = {880E9B6B-FEAB-4184-BD9B-EABEE01FBB54}
 		{A573F1D6-75E6-4B24-9EAB-C3AE22445B45} = {F7A642A1-5E62-4BF4-897D-B06ED9687780}
+		{D3FD95E3-5E2B-440E-9F31-6987DE9BD593} = {8326B2F3-74A2-4370-9CD5-9FE22781CA1A}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D0B45463-9381-49AD-BFB3-C842BDF339DF}
 	EndGlobalSection
 EndGlobal
