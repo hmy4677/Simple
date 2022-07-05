@@ -18,7 +18,7 @@ import {
 
 import { ApplyPluginsType } from 'umi';
 import { history, plugin } from '../core/umiExports';
-            
+
 // decoupling with antd UI library, you can using `alias` modify the ui methods
 // @ts-ignore
 import { message, notification } from '@umijs/plugin-request/lib/ui';
@@ -40,16 +40,16 @@ import {
   PaginatedResult,
 } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/@ahooksjs/use-request/lib/types';
 
-type ResultWithData<T = any> = { data?: T; [key: string]: any };
+type ResultWithData<T = any> = { data?: T;[key: string]: any };
 
 function useRequest<
   R = any,
   P extends any[] = any,
   U = any,
   UU extends U = any,
->(
-  service: CombineService<R, P>,
-  options: OptionsWithFormat<R, P, U, UU>,
+  >(
+    service: CombineService<R, P>,
+    options: OptionsWithFormat<R, P, U, UU>,
 ): BaseResult<U, P>;
 function useRequest<R extends ResultWithData = any, P extends any[] = any>(
   service: CombineService<R, P>,
@@ -62,9 +62,9 @@ function useRequest<R extends LoadMoreFormatReturn = any, RR = any>(
 function useRequest<
   R extends ResultWithData<LoadMoreFormatReturn | any> = any,
   RR extends R = any,
->(
-  service: CombineService<R, LoadMoreParams<R['data']>>,
-  options: LoadMoreOptions<RR['data']>,
+  >(
+    service: CombineService<R, LoadMoreParams<R['data']>>,
+    options: LoadMoreOptions<RR['data']>,
 ): LoadMoreResult<R['data']>;
 
 function useRequest<R = any, Item = any, U extends Item = any>(

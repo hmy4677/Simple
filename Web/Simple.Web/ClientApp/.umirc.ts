@@ -39,7 +39,7 @@ export default defineConfig({
       page: 1,
       pageSize: 20
     },
-    websiteTitle:'Simple'
+    websiteTitle: 'Simple'
   },
   chainWebpack(memo) {
     memo.module

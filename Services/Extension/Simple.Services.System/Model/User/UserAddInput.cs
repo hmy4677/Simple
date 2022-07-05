@@ -1,7 +1,6 @@
-﻿namespace Simple.Services.System.Model.User
+﻿namespace Simple.Services.System.Model.User;
+
+public class UserAddInput : UserInfo
 {
-  public class UserAddInput: UserInfo
-    {
-        public string Password { get; set; }
-    }
+    public string Password { get; set; }
 }

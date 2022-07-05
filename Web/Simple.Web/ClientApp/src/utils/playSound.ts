@@ -1,17 +1,15 @@
-
-
 /**
  * 播放提示音
  * @param audioId 音频id
  */
 export const soundsPlay = async (audioId: string) => {
-    try {
-        const audio: any = document.getElementById(audioId);
-        audio.play();
-    }
-    catch (error) {
-        console.error(error);
-    }
+  try {
+    const audio: any = document.getElementById(audioId);
+    audio.play();
+  }
+  catch (error) {
+    console.error(error);
+  }
 }
 
 //用例

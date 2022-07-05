@@ -1,10 +1,9 @@
-using System;
 using Simple.Application.Security.Enum;
 
-namespace Simple.Application.Security.Interface
+namespace Simple.Application.Security.Interface;
+
+public interface ISecurity
 {
-  public interface ISecurity
-  {
     /// <summary>
     /// 数字签名
     /// </summary>
@@ -39,6 +38,4 @@ namespace Simple.Application.Security.Interface
     /// <param name="privatekeyPath">私钥路径</param>
     /// <returns>解密结果（明文）</returns>
     string RSADecrypt(string password, string privatekeyPath);
-  }
 }
-

@@ -8,9 +8,6 @@ import { ApplyPluginsType } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/C
 import { renderClient } from '/Users/hemingyu/项目/Simple/Web/Simple.Web/ClientApp/node_modules/@umijs/renderer-react/dist/index.js';
 import { getRoutes } from './core/routes';
 
-
-
-
 const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) => plugin.applyPlugins({
   key: 'render',
   type: ApplyPluginsType.compose,
@@ -35,11 +32,9 @@ const getClientRender = (args: { hot?: boolean; routes?: any[] } = {}) => plugin
 const clientRender = getClientRender();
 export default clientRender();
 
-
     window.g_umi = {
       version: '3.5.24',
     };
-  
 
 // hot module replacement
 // @ts-ignore

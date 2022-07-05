@@ -1,10 +1,9 @@
-using System;
 using SqlSugar;
 
-namespace Simple.Core.SqlSugar
+namespace Simple.Core.SqlSugar;
+
+public static class PaginationExtension
 {
-  public static class PaginationExtension
-  {
     /// <summary>
     /// 分页器
     /// </summary>
@@ -15,20 +14,18 @@ namespace Simple.Core.SqlSugar
     /// <returns>分页结果</returns>
     public static async Task<DataPagination<T>> ToPaginationAsync<T>(this ISugarQueryable<T> data, int page, int pageSize)
     {
-      RefAsync<int> total = 0;
-      var list = await data.ToPageListAsync(page, pageSize, total);
-      var result = new DataPagination<T>
-      {
-        List = list,
-        Pagination = new Pagination
+        RefAsync<int> total = 0;
+        var list = await data.ToPageListAsync(page, pageSize, total);
+        var result = new DataPagination<T>
         {
-          Page = page,
-          PageSize = pageSize,
-          Total = total
-        }
-      };
-      return result;
+            List = list,
+            Pagination = new Pagination
+            {
+                Page = page,
+                PageSize = pageSize,
+                Total = total
+            }
+        };
+        return result;
     }
-  }
 }
-

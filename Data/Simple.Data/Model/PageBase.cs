@@ -1,11 +1,10 @@
-using System;
-namespace Simple.Data.Model
+namespace Simple.Data.Model;
+
+/// <summary>
+/// 分页
+/// </summary>
+public class PageBase
 {
-  /// <summary>
-  /// 分页
-  /// </summary>
-  public class PageBase
-  {
     /// <summary>
     /// 页码
     /// </summary>
@@ -15,6 +14,4 @@ namespace Simple.Data.Model
     /// 每页行数
     /// </summary>
     public int PageSize { get; set; } = 20;
-  }
 }
-

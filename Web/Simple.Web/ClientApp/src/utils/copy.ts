@@ -5,5 +5,5 @@ import copy from 'copy-to-clipboard';
  * @param text 文本
  */
 export const copyTo = (text: string) => {
-    copy(text);
+  copy(text);
 }

@@ -1,4 +1,3 @@
-using Furion;
 using Furion.UnifyResult;
 using Simple.Core.Redis;
 using Simple.Core.Sugar;

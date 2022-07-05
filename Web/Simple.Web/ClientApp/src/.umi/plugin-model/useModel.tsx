@@ -14,8 +14,7 @@ export function useModel<T extends keyof Model<T>, U>(model: T, selector: (model
 export function useModel<T extends keyof Model<T>, U>(
   namespace: T,
   updater?: (model: Model<T>[T]) => U
-) : typeof updater extends undefined ? Model<T>[T] : ReturnType<NonNullable<typeof updater>>{
-
+): typeof updater extends undefined ? Model<T>[T] : ReturnType<NonNullable<typeof updater>> {
   type RetState = typeof updater extends undefined ? Model<T>[T] : ReturnType<NonNullable<typeof updater>>
   const dispatcher = useContext<any>(UmiContext);
   const updaterRef = useRef(updater);
@@ -36,17 +35,17 @@ export function useModel<T extends keyof Model<T>, U>(
 
   useEffect(() => {
     const handler = (e: any) => {
-      if(!isMount.current) {
+      if (!isMount.current) {
         // 如果 handler 执行过程中，组件被卸载了，则强制更新全局 data
         setTimeout(() => {
           dispatcher.data![namespace] = e;
           dispatcher.update(namespace);
         });
       } else {
-        if(updater && updaterRef.current){
+        if (updater && updaterRef.current) {
           const currentState = updaterRef.current(e);
           const previousState = stateRef.current
-          if(!isEqual(currentState, previousState)){
+          if (!isEqual(currentState, previousState)) {
             setState(currentState);
           }
         } else {
