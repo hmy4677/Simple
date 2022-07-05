@@ -36,7 +36,7 @@ export default (props: ExecutorProps) => {
           {
             [namespace]: Object.assign(
               ((window as any)._umi_useModel_dev_tool_log || {})[namespace] ||
-              {},
+                {},
               {
                 [count]: data,
               },

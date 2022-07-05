@@ -9,7 +9,7 @@ import Executor from './helpers/executor';
 // @ts-ignore
 import { UmiContext } from './helpers/constant';
 
-export const models = { '@@initialState': initialState, };
+export const models = { '@@initialState': initialState,  };
 
 export type Model<T extends keyof typeof models> = {
   [key in keyof typeof models]: ReturnType<typeof models[T]>;
@@ -21,6 +21,7 @@ const dispatcher = new Dispatcher!();
 const Exe = Executor!;
 
 export default ({ children }: { children: React.ReactNode }) => {
+
   return (
     <UmiContext.Provider value={dispatcher}>
       {

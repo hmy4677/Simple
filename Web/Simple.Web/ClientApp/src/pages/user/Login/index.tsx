@@ -19,17 +19,19 @@ const LoginPage: React.FC = () => {
   return (
     <div>
       <DynamicBG />
-      <Form
-        name="normal_login"
+      <Form name="normal_login"
         className={style.loginform}
         initialValues={{ remember: true }}
         onFinish={async (values: ILogin) => {
           setLoading(true);
-          const userinfo = await login(values);
-          if (userinfo) {
-            setInitialState({ ...initialState, currentUser: userinfo });
+          try {
+            const userinfo = await login(values);
+            if (userinfo) {
+              setInitialState({ ...initialState, currentUser: userinfo });
+            }
+          } catch (error) {
+            setLoading(false);
           }
-          setLoading(false);
         }}
       >
         <div className={style.titlediv}>

@@ -9,7 +9,7 @@ import { history } from 'umi';
  * @returns 用户信息
  */
 export const login = async (loginInfo: ILogin): Promise<API.ICurrentUser | undefined> => {
-  const result = await request<ILoginResponse>('/api/user/login', { data: loginInfo, method: 'POST' });
+  const result = await request<ILoginResponse>('/api/system/user/login', { data: loginInfo, method: 'POST' });
   if (result.succeeded) {
     saveUserInfo(loginInfo.remember, result.data);
     history.replace('/');

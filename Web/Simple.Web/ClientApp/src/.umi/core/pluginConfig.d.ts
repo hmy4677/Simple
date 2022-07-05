@@ -26,12 +26,14 @@ routes?: any[]
 history?: {
 type?: ("browser" | "hash" | "memory")
 options?: {
+
 }
 }
 polyfill?: {
 imports?: string[]
 }
 alias?: {
+
 }
 analyze?: {
 analyzerMode?: ("server" | "static" | "disabled")
@@ -48,6 +50,7 @@ defaultSizes?: ("stat" | "parsed" | "gzip")
  * postcss autoprefixer, default flexbox: no-2009
  */
 autoprefixer?: {
+
 }
 base?: string
 chainWebpack?: (() => any)
@@ -59,6 +62,7 @@ cssLoader?: {
 url?: (boolean | (() => any))
 import?: (boolean | (() => any))
 modules?: (boolean | string | {
+
 })
 sourceMap?: boolean
 importLoaders?: number
@@ -70,11 +74,14 @@ cssModulesTypescriptLoader?: {
 mode?: ("emit" | "verify")
 }
 cssnano?: {
+
 }
 copy?: any[]
 define?: {
+
 }
 devScripts?: {
+
 }
 /**
  * devServer configs
@@ -91,6 +98,7 @@ cert?: string
 [k: string]: any
 } | boolean)
 headers?: {
+
 }
 writeToDisk?: (boolean | (() => any))
 [k: string]: any
@@ -109,6 +117,7 @@ loading?: string
  * Code splitting for import statement syntax
  */
 dynamicImportSyntax?: {
+
 }
 exportStatic?: {
 htmlSuffix?: boolean
@@ -120,6 +129,7 @@ supportWin?: boolean
 extraRoutePaths?: (() => any)
 }
 externals?: ({
+
 } | string | (() => any))
 extraBabelIncludes?: any[]
 extraBabelPlugins?: any[]
@@ -131,23 +141,30 @@ extraPostCSSPlugins?: any[]
 forkTSChecker?: {
 async?: boolean
 typescript?: (boolean | {
+
 })
 eslint?: {
+
 }
 issue?: {
+
 }
 formatter?: (string | {
+
 })
 logger?: {
+
 }
 [k: string]: any
 }
 fastRefresh?: {
+
 }
 hash?: boolean
 ignoreMomentLocale?: boolean
 inlineLimit?: number
 lessLoader?: {
+
 }
 manifest?: {
 fileName?: string
@@ -167,12 +184,14 @@ output?: string
 }
 mfName?: string
 exportAllMembers?: {
+
 }
 chunks?: string[]
 ignoreNodeBuiltInModules?: boolean
 }
 mountElementId?: ""
 mpa?: {
+
 }
 nodeModulesTransform?: {
 type?: ("all" | "none")
@@ -181,9 +200,11 @@ exclude?: string[]
 outputPath?: ""
 plugins?: string[]
 postcssLoader?: {
+
 }
 presets?: string[]
 proxy?: {
+
 }
 publicPath?: string
 runtimePublicPath?: boolean
@@ -208,14 +229,19 @@ staticMarkup?: boolean
 }
 singular?: boolean
 styleLoader?: {
+
 }
 targets?: {
+
 }
 terserOptions?: {
+
 }
 theme?: {
+
 }
 runtimeHistory?: {
+
 }
 webpack5?: {
 lazyCompilation?: {
@@ -225,6 +251,7 @@ test?: any
 }
 }
 workerLoader?: {
+
 }
 favicon?: string
 headScripts?: any[]
@@ -242,6 +269,7 @@ compact?: boolean
 mobile?: boolean
 disableBabelPluginImport?: boolean
 config?: {
+
 }
 }
 dva?: {
@@ -253,6 +281,7 @@ lazyLoad?: boolean
 extraModels?: string[]
 hmr?: boolean
 immer?: (boolean | {
+
 })
 skipModelValidate?: boolean
 }
@@ -265,6 +294,7 @@ antd?: boolean
 baseSeparator?: string
 }
 layout?: {
+
 }
 request?: {
 dataField?: ""

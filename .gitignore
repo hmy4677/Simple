@@ -361,3 +361,9 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+
+# umi
+/src/.umi
+/src/.umi-production
+/src/.umi-test
+/.env.local
