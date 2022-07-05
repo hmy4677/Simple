@@ -18,7 +18,7 @@ namespace Simple.Core.Sugar
                 {
                     ConfigId="db1",//id自定义唯一
                     ConnectionString=App.Configuration.GetConnectionString("SimpleDB"),//appsettion 连接字符串
-                    DbType=IocDbType.SqlServer,         
+                    DbType=IocDbType.MySql,         
                     IsAutoCloseConnection=true
                 },
                 //还可以添加其它数据库配置
