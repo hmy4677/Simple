@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AlipaySDKNet.Standard" Version="4.6.341" />
     <PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="3.7.0" />
     <PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="3.7.0" />
     <PackageReference Include="Furion.Pure" Version="3.7.0" />
