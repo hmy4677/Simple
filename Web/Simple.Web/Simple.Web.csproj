@@ -32,6 +32,7 @@
     <Folder Include="Controllers\Base\" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Application\Simple.Application.Payment\Simple.Application.Payment.csproj" />
     <ProjectReference Include="..\..\Services\Base\Simple.Services.DbInitial\Simple.Services.DbInitial.csproj" />
     <ProjectReference Include="..\..\Services\Extension\Simple.Services.System\Simple.Services.System.csproj">
       <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
