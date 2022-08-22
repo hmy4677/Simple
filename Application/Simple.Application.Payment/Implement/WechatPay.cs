@@ -4,12 +4,7 @@ using Microsoft.Extensions.Options;
 using Simple.Application.Payment.Interface;
 using Simple.Application.Payment.Model;
 using Simple.Application.Payment.Option;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
-using System.Threading.Tasks;
 
 namespace Simple.Application.Payment.Implement;
 

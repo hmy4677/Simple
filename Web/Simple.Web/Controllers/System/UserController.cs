@@ -1,6 +1,7 @@
 ﻿using Furion.DataEncryption;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Simple.Data.Entity;
 using Simple.Services.System.Interface;
 using Simple.Services.System.Model.User;
 
@@ -75,5 +76,16 @@ public class UserController : ControllerBase
     public async Task<int> UpdateUser(long id, [FromBody] UserInfo info)
     {
         return await _service.UpdateUser(id, info);
+    }
+
+    /// <summary>
+    /// 获取用户信息
+    /// </summary>
+    /// <param name="id"></param>
+    /// <returns></returns>
+    [HttpGet("{id}"),AllowAnonymous]
+    public async Task<UserEntity> GetUserInfo(long id)
+    {
+        return await _service.GetUserEntity(id);
     }
 }

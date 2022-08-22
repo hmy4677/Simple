@@ -1,4 +1,5 @@
 using Furion.UnifyResult;
+using Simple.Application.Payment.Option;
 using Simple.Core.Redis;
 using Simple.Core.Sugar;
 using Simple.Web;
@@ -12,7 +13,8 @@ builder.Services.AddControllersWithViews().AddInjectWithUnifyResult<RESTfulResul
 builder.Services.AddRemoteRequest();//远程请求
 builder.Services.AddDBConnection();//连数据库
 builder.Services.AddRedisConnection();//连Redis
-
+builder.Services.AddConfigurableOptions<WechatPayOptions>();
+builder.Services.AddConfigurableOptions<AliPayOptions>();
 var app = builder.Build();
 
 app.UseInject("swagger");//http://localhost:5000/swagger

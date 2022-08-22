@@ -1,3 +1,4 @@
+using Simple.Data.Entity;
 using Simple.Services.System.Model.User;
 
 namespace Simple.Services.System.Interface;
@@ -35,4 +36,11 @@ public interface IUserService
     /// <param name="info"></param>
     /// <returns></returns>
     Task<int> UpdateUser(long id, UserInfo info);
+
+    /// <summary>
+    /// 获取用户信息
+    /// </summary>
+    /// <param name="id">用户id</param>
+    /// <returns>用户信息</returns>
+    Task<UserEntity> GetUserEntity(long id);
 }

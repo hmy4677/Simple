@@ -7,16 +7,17 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="AlipaySDKNet.Standard" Version="4.6.341" />
-    <PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="3.7.0" />
-    <PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="3.7.0" />
-    <PackageReference Include="Furion.Pure" Version="3.7.0" />
-    <PackageReference Include="SqlSugar.IOC" Version="1.8.0" />
-    <PackageReference Include="SqlSugarCore" Version="5.0.9.1" />
-    <PackageReference Include="StackExchange.Redis" Version="2.6.45" />
+    <PackageReference Include="AlipaySDKNet.Standard" Version="4.6.398" />
+    <PackageReference Include="Furion.Extras.Authentication.JwtBearer" Version="4.2.7" />
+    <PackageReference Include="Furion.Extras.ObjectMapper.Mapster" Version="4.2.7" />
+    <PackageReference Include="Furion.Pure" Version="4.2.7" />
+    <PackageReference Include="Furion.Pure.Xunit" Version="4.2.7" />
+    <PackageReference Include="SqlSugar.IOC" Version="1.9.0" />
+    <PackageReference Include="SqlSugarCore" Version="5.1.2.3" />
+    <PackageReference Include="StackExchange.Redis" Version="2.6.48" />
     <PackageReference Include="System.Management" Version="6.0.0" />
-    <PackageReference Include="Yitter.IdGenerator" Version="1.0.12" />
-    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.0" />
+    <PackageReference Include="Yitter.IdGenerator" Version="1.0.14" />
+    <PackageReference Include="SkiaSharp.NativeAssets.Linux.NoDependencies" Version="2.88.1" />
     <PackageReference Include="SkiaSharp.QrCode" Version="0.6.0" />
   </ItemGroup>
 

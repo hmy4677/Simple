@@ -17,8 +17,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Model\" />
-    <Folder Include="Implement\" />
-    <Folder Include="Interface\" />
     <Folder Include="Model\User\" />
   </ItemGroup>
 </Project>

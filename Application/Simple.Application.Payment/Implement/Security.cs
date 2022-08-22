@@ -1,22 +1,20 @@
 ﻿using Aop.Api.Util;
+using Furion.DependencyInjection;
 using Furion.FriendlyException;
 using Microsoft.Extensions.Options;
 using Org.BouncyCastle.Crypto.Engines;
 using Org.BouncyCastle.Crypto.Modes;
 using Org.BouncyCastle.Crypto.Parameters;
+using Simple.Application.Payment.Interface;
 using Simple.Application.Payment.Model;
 using Simple.Application.Payment.Option;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace Simple.Application.Payment.Implement;
 
-public class Security
+public class Security:ISecurity,ITransient
 {
     private readonly WechatPayOptions _wechatPayOptions;
     private readonly AliPayOptions _aliPayOptions;

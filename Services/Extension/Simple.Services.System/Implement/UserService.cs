@@ -22,7 +22,7 @@ public class UserService : Repository<UserEntity>, IUserService, ITransient
     private readonly SqlSugarProvider _db;
     private readonly IDatabase _redis;
 
-    public UserService(IDistributedCache cache, IDatabase redis)
+    public UserService(IDatabase redis)
     {
         _db = DbScoped.SugarScope.GetConnection("db1");
         _redis = redis;
@@ -79,5 +79,12 @@ public class UserService : Repository<UserEntity>, IUserService, ITransient
         user = info.Adapt(user);
         user.UpdateTime = DateTime.Now;
         return await AsUpdateable(user).IgnoreColumns(true).ExecuteCommandAsync();
+    }
+
+    //获取用户信息
+    public async Task<UserEntity> GetUserEntity(long id)
+    {
+        var user = await base.GetByIdAsync(id);
+        return user;
     }
 }
