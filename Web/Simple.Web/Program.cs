@@ -13,8 +13,8 @@ builder.Services.AddControllersWithViews().AddInjectWithUnifyResult<RESTfulResul
 builder.Services.AddRemoteRequest();//远程请求
 builder.Services.AddDBConnection();//连数据库
 builder.Services.AddRedisConnection();//连Redis
-builder.Services.AddConfigurableOptions<WechatPayOptions>();
-builder.Services.AddConfigurableOptions<AliPayOptions>();
+builder.Services.AddConfigurableOptions<WechatPayOptions>();//微信支付options
+builder.Services.AddConfigurableOptions<AliPayOptions>();//支付宝options
 var app = builder.Build();
 
 app.UseInject("swagger");//http://localhost:5000/swagger

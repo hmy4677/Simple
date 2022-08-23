@@ -10,27 +10,29 @@ using System.Text.Json;
 
 namespace Simple.Application.Payment.Implement;
 
+/// <summary>
+/// 支付宝支付服务
+/// </summary>
 public class AliPay : IAliPay, ITransient
 {
     private readonly AliPayOptions _aliPayOptions;
-    private readonly string _apiurl = "https://openapi.alipay.com/gateway.do";
     private readonly string _appid;
-    private readonly IOptions<AliPayOptions> _aliPayOptions1;
+    private const string _apiurl = "https://openapi.alipay.com/gateway.do";
 
     public AliPay(IOptions<AliPayOptions> aliPayOptions)
     {
-        _aliPayOptions1 = aliPayOptions;
+        _aliPayOptions = aliPayOptions.Value;
         _appid = _aliPayOptions.AppId;
     }
 
     /// <summary>
     /// 手机网页支付
     /// </summary>
-    /// <param name="tradeNo"></param>
-    /// <param name="subject"></param>
-    /// <param name="amount"></param>
-    /// <param name="return_url"></param>
-    public AlipayTradeWapPayResponse WapPay(string tradeNo, string subject, decimal amount, string return_url)
+    /// <param name="outTradeNo">商户单号</param>
+    /// <param name="subject">商品名称</param>
+    /// <param name="amount"><金额/param>
+    /// <param name="return_url">返回url</param>
+    public AlipayTradeWapPayResponse WapPay(string outTradeNo, string subject, decimal amount, string return_url)
     {
         var privateKey = GetKeyFromFile(_aliPayOptions.PrivateKeyPath);
         var publicKey = GetKeyFromFile(_aliPayOptions.AliPublicKeyPath);
@@ -40,7 +42,7 @@ public class AliPay : IAliPay, ITransient
         request.SetReturnUrl(return_url);
         var bizContent = new Dictionary<string, object>
             {
-                { "out_trade_no", tradeNo },
+                { "out_trade_no", outTradeNo },
                 { "total_amount", amount },
                 { "subject", subject },
                 { "product_code", "QUICK_WAP_WAY" }
@@ -53,9 +55,9 @@ public class AliPay : IAliPay, ITransient
     /// <summary>
     /// 支付账单查询
     /// </summary>
-    /// <param name="tradeNo">商户单号</param>
+    /// <param name="outTradeNo">商户单号</param>
     /// <returns></returns>
-    public AlipayTradeQueryResponse QueryPay(string tradeNo)
+    public AlipayTradeQueryResponse QueryPay(string outTradeNo)
     {
         var privateKey = GetKeyFromFile(_aliPayOptions.PrivateKeyPath);
         var publicKey = GetKeyFromFile(_aliPayOptions.AliPublicKeyPath);
@@ -63,7 +65,7 @@ public class AliPay : IAliPay, ITransient
         var request = new AlipayTradeQueryRequest();
         var bizContent = new Dictionary<string, object>
             {
-                { "out_trade_no", tradeNo }
+                { "out_trade_no", outTradeNo }
             };
         //bizContent.Add("trade_no", "2014112611001004680073956707");
 
@@ -75,12 +77,12 @@ public class AliPay : IAliPay, ITransient
     /// <summary>
     /// 支付宝退款
     /// </summary>
-    /// <param name="tradeNo">商户单号</param>
+    /// <param name="outTradeNo">商户单号</param>
     /// <param name="refundId">退款id</param>
     /// <param name="refundAmount">退款金额</param>
     /// <param name="reason">退款原因</param>
     /// <returns></returns>
-    public AlipayTradeRefundResponse Refund(string tradeNo, string refundId, decimal refundAmount, string reason)
+    public AlipayTradeRefundResponse Refund(string outTradeNo, string refundId, decimal refundAmount, string reason)
     {
         var privateKey = GetKeyFromFile(_aliPayOptions.PrivateKeyPath);
         var publicKey = GetKeyFromFile(_aliPayOptions.AliPublicKeyPath);
@@ -88,7 +90,7 @@ public class AliPay : IAliPay, ITransient
         var request = new AlipayTradeRefundRequest();
         var bizContent = new Dictionary<string, object>
             {
-                { "out_trade_no",  tradeNo},
+                { "out_trade_no",  outTradeNo},
                 { "refund_amount", refundAmount },
                 { "out_request_no", refundId },
                 {"refund_reason",reason }
@@ -104,7 +106,12 @@ public class AliPay : IAliPay, ITransient
         return response;
     }
 
-    public AlipayTradeCloseResponse Close(string tradeNO)
+    /// <summary>
+    /// 关闭订单
+    /// </summary>
+    /// <param name="outTradeNO">商户单号</param>
+    /// <returns>关闭响应</returns>
+    public AlipayTradeCloseResponse Close(string outTradeNO)
     {
         var privateKey = GetKeyFromFile(_aliPayOptions.PrivateKeyPath);
         var publicKey = GetKeyFromFile(_aliPayOptions.AliPublicKeyPath);
@@ -112,7 +119,7 @@ public class AliPay : IAliPay, ITransient
         var request = new AlipayTradeCloseRequest();
         var bizContent = new Dictionary<string, object>
             {
-                { "out_trade_no", tradeNO }
+                { "out_trade_no", outTradeNO }
             };
         request.BizContent = JsonSerializer.Serialize(bizContent);
         var response = client.Execute(request);

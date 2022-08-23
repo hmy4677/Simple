@@ -73,7 +73,7 @@ public class UserController : ControllerBase
     /// <param name="info"></param>
     /// <returns></returns>
     [HttpPut("{id}")]
-    public async Task<int> UpdateUser(long id, [FromBody] UserInfo info)
+    public async Task<bool> UpdateUser(long id, [FromBody] UserInfo info)
     {
         return await _service.UpdateUser(id, info);
     }

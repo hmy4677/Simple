@@ -14,7 +14,10 @@ using System.Text;
 
 namespace Simple.Application.Payment.Implement;
 
-public class Security:ISecurity,ITransient
+/// <summary>
+/// 支付安全服务
+/// </summary>
+public class Security : ISecurity, ITransient
 {
     private readonly WechatPayOptions _wechatPayOptions;
     private readonly AliPayOptions _aliPayOptions;
@@ -128,7 +131,7 @@ public class Security:ISecurity,ITransient
     /// <param name="nonce"></param>
     /// <param name="bodyjson"></param>
     /// <returns></returns>
-    public bool VerifyWechat(string signature, string stamp, string nonce, string? bodyjson)
+    public bool VerifyWechat(string signature, string stamp, string nonce, string bodyjson)
     {
         if (!File.Exists(_wechatPayOptions.PlatCertPath))
         {

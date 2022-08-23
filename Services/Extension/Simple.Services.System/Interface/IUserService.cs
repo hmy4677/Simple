@@ -34,8 +34,7 @@ public interface IUserService
     /// </summary>
     /// <param name="id">用户id</param>
     /// <param name="info"></param>
-    /// <returns></returns>
-    Task<int> UpdateUser(long id, UserInfo info);
+    Task<bool> UpdateUser(long id, UserInfo info);
 
     /// <summary>
     /// 获取用户信息

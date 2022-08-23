@@ -8,6 +8,9 @@ using System.Text.Json;
 
 namespace Simple.Application.Payment.Implement;
 
+/// <summary>
+/// 微信支付服务
+/// </summary>
 public class WechatPay : IWechatPay, ITransient
 {
     private readonly WechatPayOptions _wechatPayOptions;
@@ -25,10 +28,10 @@ public class WechatPay : IWechatPay, ITransient
     /// </summary>
     /// <param name="amount">金额(单位:分)</param>
     /// <param name="des">商品描述</param>
-    /// <param name="tradeNO">商户单号</param>
+    /// <param name="outTradeNO">商户单号</param>
     /// <param name="openId">支付者openid</param>
     /// <returns>预付单号</returns>
-    public async Task<string> PrepayTransaction(int amount, string des, string tradeNO, string openId)
+    public async Task<string> PrepayTransaction(int amount, string des, string outTradeNO, string openId)
     {
         var url = "https://api.mch.weixin.qq.com/v3/pay/transactions/jsapi";
         var body = new WechatPayPrepayRequest
@@ -38,7 +41,7 @@ public class WechatPay : IWechatPay, ITransient
             amount = new AmountPre { total = amount },
             description = des,
             notify_url = _wechatPayOptions.PayNotifyUrl,
-            out_trade_no = tradeNO,
+            out_trade_no = outTradeNO,
             payer = new PayerInfo { openid = openId }
         };
         var bodyjson = JsonSerializer.Serialize(body);
@@ -56,9 +59,9 @@ public class WechatPay : IWechatPay, ITransient
     }
 
     /// <summary>
-    /// 支付查询(微信支付单号)
+    /// 支付查询(微信支付号)
     /// </summary>
-    /// <param name="transactionId">微信支付单位号</param>
+    /// <param name="transactionId">微信支付号</param>
     /// <returns>查询结果</returns>
     public async Task<WechatPayQueryResponse> QueryByTransactionId(string transactionId)
     {
@@ -79,11 +82,11 @@ public class WechatPay : IWechatPay, ITransient
     /// <summary>
     /// 支付查询(商户单号)
     /// </summary>
-    /// <param name="tradeNO">商户单号</param>
+    /// <param name="outTradeNO">商户单号</param>
     /// <returns></returns>
-    public async Task<WechatPayQueryResponse> QueryByOutTradeNo(string tradeNO)
+    public async Task<WechatPayQueryResponse> QueryByOutTradeNo(string outTradeNO)
     {
-        var url = $"https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{tradeNO}?mchid={_wechatPayOptions.Mchid}";
+        var url = $"https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{outTradeNO}?mchid={_wechatPayOptions.Mchid}";
         var authorization = _security.BuildAuthorization(new SecurityInfo
         {
             url = TrimUrl(url),
@@ -100,11 +103,11 @@ public class WechatPay : IWechatPay, ITransient
     /// <summary>
     /// 关闭订单
     /// </summary>
-    /// <param name="tradeNo">商户单号</param>
+    /// <param name="outTradeNo">商户单号</param>
     /// <returns>是否成功</returns>
-    public async Task<bool> CloseByOutTradeNo(string tradeNo)
+    public async Task<bool> CloseByOutTradeNo(string outTradeNo)
     {
-        var url = $"https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{tradeNo}/close";
+        var url = $"https://api.mch.weixin.qq.com/v3/pay/transactions/out-trade-no/{outTradeNo}/close";
         var body = new { mchid = _wechatPayOptions.Mchid };
         var bodyjson = JsonSerializer.Serialize(body);
         var authorization = _security.BuildAuthorization(new SecurityInfo
@@ -127,17 +130,17 @@ public class WechatPay : IWechatPay, ITransient
     /// <param name="totalAmount">订单总金额</param>
     /// <param name="refundAmount">退款金额</param>
     /// <param name="refundNo">退款单号</param>
-    /// <param name="tradeNo">商户单号</param>
+    /// <param name="outTradeNo">商户单号</param>
     /// <param name="transactionId">微信支付单号</param>
     /// <param name="reason">退款原因</param>
     /// <returns>退款结果</returns>
-    public async Task<WechatPayRefundResponse> Refund(int totalAmount, int refundAmount, string refundNo, string tradeNo)
+    public async Task<WechatPayRefundResponse> Refund(int totalAmount, int refundAmount, string refundNo, string outTradeNo)
     {
         var url = "https://api.mch.weixin.qq.com/v3/refund/domestic/refunds";
         var body = new WechatPayRefundRequest
         {
             out_refund_no = refundNo,
-            out_trade_no = tradeNo,
+            out_trade_no = outTradeNo,
             amount = new RefundAmount
             {
                 total = totalAmount,

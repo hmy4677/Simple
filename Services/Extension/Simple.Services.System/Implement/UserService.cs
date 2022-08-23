@@ -50,7 +50,11 @@ public class UserService : Repository<UserEntity>, IUserService, ITransient
 #endif
         var user = await _db.Queryable<UserEntity>().FirstAsync(p => p.Account == input.Account);
         _ = user ?? throw Oops.Oh("Account is Error");
-        if (!input.Password.ToMD5Compare(user.Password)) throw Oops.Oh("Passwork is Error");
+        if (!input.Password.ToMD5Compare(user.Password))
+        {
+            throw Oops.Oh("Passwork is Error");
+        }
+
         var userinfo = user.Adapt<UserInfo>();
         return userinfo;
     }
@@ -69,16 +73,20 @@ public class UserService : Repository<UserEntity>, IUserService, ITransient
         newUser.Id = YitIdHelper.NextId();
         newUser.Password = input.Password.ToMD5Encrypt();
 
-        return await base.InsertAsync(newUser);
+        var success = await base.InsertAsync(newUser);
+        return success;
     }
 
     //更新用户
-    public async Task<int> UpdateUser(long id, UserInfo info)
+    public async Task<bool> UpdateUser(long id, UserInfo info)
     {
         var user = await base.GetByIdAsync(id);
         user = info.Adapt(user);
         user.UpdateTime = DateTime.Now;
-        return await AsUpdateable(user).IgnoreColumns(true).ExecuteCommandAsync();
+        var success = await base.AsUpdateable(user)
+            .UpdateColumns(p => new { p.Name, p.Status, p.UpdateTime, p.AvatarUrl })
+            .ExecuteCommandHasChangeAsync();
+        return success;
     }
 
     //获取用户信息
